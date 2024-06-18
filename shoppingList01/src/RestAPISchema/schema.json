@@ -1,0 +1,533 @@
+{
+  "collections": [
+    {
+      "properties": [
+        {
+          "name": "name",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "stringAttributes": {
+            "defaultValue": ""
+          },
+          "variants": []
+        },
+        {
+          "name": "icon",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "stringAttributes": {
+            "defaultValue": ""
+          },
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "category",
+      "description": null,
+      "isQuery": false,
+      "systemType": 0,
+      "filter": null,
+      "filterJson": null,
+      "access": [
+        {
+          "method": "PATCH",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "PUT",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "DELETE",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "POST",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "GET",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        }
+      ]
+    },
+    {
+      "properties": [
+        {
+          "name": "name",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "price",
+          "typeName": "decimal",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "comment",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "item",
+      "description": null,
+      "isQuery": false,
+      "systemType": 0,
+      "filter": null,
+      "filterJson": null,
+      "access": [
+        {
+          "method": "POST",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "PATCH",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "GET",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "DELETE",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "PUT",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        }
+      ]
+    },
+    {
+      "properties": [
+        {
+          "name": "item",
+          "typeName": "item",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "delete",
+          "variants": []
+        },
+        {
+          "name": "category",
+          "typeName": "category",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "prev",
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "itemCategory",
+      "description": null,
+      "isQuery": false,
+      "systemType": 0,
+      "filter": null,
+      "filterJson": null,
+      "access": [
+        {
+          "method": "GET",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "DELETE",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "PATCH",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "POST",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "PUT",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        }
+      ]
+    },
+    {
+      "properties": [
+        {
+          "name": "name",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 10,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "role",
+      "description": "Built-in collection",
+      "isQuery": false,
+      "systemType": 2,
+      "filter": null,
+      "filterJson": null,
+      "access": []
+    },
+    {
+      "properties": [
+        {
+          "name": "name",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "status",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "comment",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "shoppingList",
+      "description": null,
+      "isQuery": false,
+      "systemType": 0,
+      "filter": null,
+      "filterJson": null,
+      "access": [
+        {
+          "method": "PATCH",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "DELETE",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "GET",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        },
+        {
+          "method": "POST",
+          "roleNames": ["_AUTHENTICATED_USER", "_EVERYONE"]
+        },
+        {
+          "method": "PUT",
+          "roleNames": ["_EVERYONE", "_AUTHENTICATED_USER"]
+        }
+      ]
+    },
+    {
+      "properties": [
+        {
+          "name": "item",
+          "typeName": "item",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "prev",
+          "variants": []
+        },
+        {
+          "name": "shoppingList",
+          "typeName": "shoppingList",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "delete",
+          "variants": []
+        },
+        {
+          "name": "comment",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "prev",
+          "stringAttributes": {
+            "defaultValue": ""
+          },
+          "variants": []
+        },
+        {
+          "name": "isPurchased",
+          "typeName": "boolean",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "onParentDelete": "prev",
+          "variants": []
+        },
+        {
+          "name": "quantity",
+          "typeName": "integer",
+          "limitTo": null,
+          "systemType": 0,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "shoppingListItem",
+      "description": null,
+      "isQuery": false,
+      "systemType": 0,
+      "filter": null,
+      "filterJson": null,
+      "access": [
+        {
+          "method": "DELETE",
+          "roleNames": ["_EVERYONE"]
+        },
+        {
+          "method": "PUT",
+          "roleNames": ["_EVERYONE"]
+        },
+        {
+          "method": "PATCH",
+          "roleNames": ["_EVERYONE"]
+        },
+        {
+          "method": "POST",
+          "roleNames": ["_EVERYONE"]
+        },
+        {
+          "method": "GET",
+          "roleNames": ["_EVERYONE"]
+        }
+      ]
+    },
+    {
+      "properties": [
+        {
+          "name": "name",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 1,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "email",
+          "typeName": "string",
+          "limitTo": null,
+          "systemType": 2,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "user",
+      "description": "Built-in collection",
+      "isQuery": false,
+      "systemType": 1,
+      "filter": null,
+      "filterJson": null,
+      "access": []
+    },
+    {
+      "properties": [
+        {
+          "name": "user",
+          "typeName": "user",
+          "limitTo": null,
+          "systemType": 11,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        },
+        {
+          "name": "role",
+          "typeName": "role",
+          "limitTo": null,
+          "systemType": 12,
+          "isUnique": false,
+          "isRequired": false,
+          "securityPolicy": null,
+          "variants": []
+        }
+      ],
+      "views": null,
+      "name": "userRole",
+      "description": "Built-in collection",
+      "isQuery": false,
+      "systemType": 3,
+      "filter": null,
+      "filterJson": null,
+      "access": []
+    }
+  ],
+  "queries": [
+    {
+      "name": "shoppingListItemsWithCategory",
+      "description": null,
+      "filterString": "2.id ne null",
+      "filterJson": "{\"combinator\":\"and\",\"rules\":[{\"collectionName\":\"2 - shoppingListItem (shoppingListItem.shoppingList)\",\"fieldName\":\"id\",\"operator\":{\"displayText\":\"Is not null\",\"supportedTypes\":[\"boolean\",\"date\",\"date-time\",\"decimal\",\"guid\",\"integer\",\"decimal\",\"string\"],\"value\":\"ne null\"},\"value\":true,\"id\":0,\"typeName\":\"string\",\"operators\":[{\"displayText\":\"Equals\",\"supportedTypes\":[\"boolean\",\"date\",\"date-time\",\"decimal\",\"guid\",\"integer\",\"decimal\",\"string\"],\"value\":\"eq\"},{\"displayText\":\"Not equals\",\"supportedTypes\":[\"boolean\",\"date\",\"date-time\",\"decimal\",\"guid\",\"integer\",\"decimal\",\"string\"],\"value\":\"ne\"},{\"displayText\":\"Starts with\",\"supportedTypes\":[\"date\",\"date-time\",\"string\",\"guid\"],\"value\":\"sw\"},{\"displayText\":\"Ends with\",\"supportedTypes\":[\"date\",\"date-time\",\"string\",\"guid\"],\"value\":\"ew\"},{\"displayText\":\"Contains\",\"supportedTypes\":[\"date\",\"date-time\",\"string\",\"guid\"],\"value\":\"con\"},{\"displayText\":\"Does not contain\",\"supportedTypes\":[\"date\",\"date-time\",\"string\",\"guid\"],\"value\":\"ncon\"},{\"displayText\":\"Is null\",\"supportedTypes\":[\"boolean\",\"date\",\"date-time\",\"decimal\",\"guid\",\"integer\",\"decimal\",\"string\"],\"value\":\"eq null\"},{\"displayText\":\"Is not null\",\"supportedTypes\":[\"boolean\",\"date\",\"date-time\",\"decimal\",\"guid\",\"integer\",\"decimal\",\"string\"],\"value\":\"ne null\"}],\"joinId\":2}],\"groups\":[]}",
+      "source": {
+        "joinId": 1,
+        "idAlias": "listId",
+        "idFilterOnly": null,
+        "collection": "shoppingList",
+        "properties": [
+          {
+            "name": "name",
+            "alias": "listName",
+            "aggregation": ""
+          },
+          {
+            "name": "status",
+            "alias": "listStatus",
+            "aggregation": ""
+          },
+          {
+            "name": "comment",
+            "alias": "listComment",
+            "aggregation": ""
+          }
+        ],
+        "joins": [
+          {
+            "joinId": 2,
+            "idAlias": "shoppingListItemId",
+            "idFilterOnly": null,
+            "collection": "shoppingListItem",
+            "to": "shoppingList",
+            "properties": [
+              {
+                "name": "isPurchased",
+                "alias": "isPurchased",
+                "aggregation": ""
+              },
+              {
+                "name": "quantity",
+                "alias": "quantity",
+                "aggregation": ""
+              }
+            ],
+            "joins": [
+              {
+                "joinId": 3,
+                "idAlias": "itemId",
+                "idFilterOnly": null,
+                "collection": "item",
+                "from": "item",
+                "properties": [
+                  {
+                    "name": "name",
+                    "alias": "itemName",
+                    "aggregation": ""
+                  },
+                  {
+                    "name": "price",
+                    "alias": "itemPrice",
+                    "aggregation": ""
+                  }
+                ],
+                "joins": [
+                  {
+                    "joinId": 4,
+                    "idAlias": null,
+                    "idFilterOnly": null,
+                    "collection": "itemCategory",
+                    "to": "item",
+                    "properties": [],
+                    "joins": [
+                      {
+                        "joinId": 6,
+                        "idAlias": "categoryId",
+                        "idFilterOnly": null,
+                        "collection": "category",
+                        "from": "category",
+                        "properties": [
+                          {
+                            "name": "name",
+                            "alias": "categoryName",
+                            "aggregation": ""
+                          },
+                          {
+                            "name": "icon",
+                            "alias": "icon",
+                            "aggregation": ""
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "access": [
+        {
+          "method": "GET",
+          "roleNames": ["_EVERYONE"]
+        }
+      ]
+    }
+  ],
+  "security": {
+    "securityPolicy": false
+  }
+}

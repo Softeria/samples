@@ -1,30 +1,40 @@
-# React + TypeScript + Vite
+# Simple shopping list app without security
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This sample demonstrates a simple React application that implements a shopping list app without user management.
+All endpoints are publicly accessible and no login is required.
 
-Currently, two official plugins are available:
+## Set up the backend API
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Go to https://portal.restapi.com and create a new empty API. Then go to Data -> Collections & Views and select the source tab. Paste in the contents of the schema.json file located in the RestAPISchema folder in the src directory and click Save. You should now have the structure needed to run the app.
 
-## Expanding the ESLint configuration
+## Change vite.config.ts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+In the vite.config.ts, replace the proxy's target to be your API address - found in the Overview section in the portal for your API.
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+export default defineConfig({
+  server: {
+    port: 3000,
+    hmr: true,
+    proxy: {
+      "/api": {
+        target: "<Your API address found in the Overview section in the portal.>",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
   },
-}
+  plugins: [react(), mkcert()],
+});
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Replace `target: "<Your API address found in the Overview section in the portal.>",` to (for example) `target: "https://eu.restapi.com/mysampleapi",`
+
+## Run the sample
+
+- Open a terminal and navigate to the sample directory
+- Run `npm install`
+- Run `npm run dev`
+
+The sample is set up to generate a locally signed certificate using mkcert so that you can run https locally.
+<br />The solution will be available at https://localhost:3000
