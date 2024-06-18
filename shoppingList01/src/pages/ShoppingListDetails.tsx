@@ -132,7 +132,7 @@ const ShoppingListDetails = () => {
           const newShoppingListItem = {
             listId: params.shoppingListId,
             shoppingListItemId: resp.data[0],
-            itemId: selectedItem.id,
+            itemId: selectedItem.item.id,
             categoryName: selectedItem.item.itemCategory?.[0].category.name,
             itemName: selectedItem.item.name,
             itemPrice: selectedItem.item.price,
@@ -172,7 +172,7 @@ const ShoppingListDetails = () => {
     const categories: Category[] = [];
     items.forEach((item) => {
       if (!categories.some((c) => c.id?.toLowerCase() === item.categoryId?.toLowerCase())) {
-        categories.push({ id: item.categoryId?.toLowerCase(), name: item.categoryName || "No category", icon: item.icon || "category e574" });
+        if (item.itemId) categories.push({ id: item.categoryId?.toLowerCase(), name: item.categoryName || "No category", icon: item.icon || "category e574" });
       }
     });
 

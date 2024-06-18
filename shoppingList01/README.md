@@ -38,3 +38,5 @@ export default defineConfig({
 
 The sample is set up to generate a locally signed certificate using mkcert so that you can run https locally.
 <br />The solution will be available at https://localhost:3000
+
+![alt text](image-1.png)
