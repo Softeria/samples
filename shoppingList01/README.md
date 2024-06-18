@@ -40,3 +40,12 @@ The sample is set up to generate a locally signed certificate using mkcert so th
 <br />The solution will be available at https://localhost:3000
 
 ![alt text](image-1.png)
+
+## Host the app at RestAPI.com 
+You need to change the setting VITE_URL in .env.production file to point to your Web app url. This is found in the portal at App -> Web app -> General -> Web app url.
+
+- Copy the Web app url value and replace the placeholder in the .env.production file.
+- Run `npm run build`
+- Zip the contents in the dist folder after the build is finished.
+- Go to the File explorer tab in the portal and click on Deploy zip. Then select your zip file from the previous step.
+- You should now be able to access the sample app at the web app url.
