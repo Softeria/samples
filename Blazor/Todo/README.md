@@ -12,20 +12,9 @@ Go to https://portal.restapi.com and create a new empty API. Then go to Data -> 
 In the appsettings.json in the wwwroot folder, change the BackendUrl to be your API address - found in the Overview section in the portal for your API.
 
 ```js
-export default defineConfig({
-  server: {
-    port: 3000,
-    hmr: true,
-    proxy: {
-      "/api": {
-        target: "<Your API address found in the Overview section in the portal.>",
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
-      },
-    },
-  },
-  plugins: [react(), mkcert()],
-});
+{
+  "BackendUrl": "<Your API address found in the Overview section in the portal.>"
+}
 ```
 
 - Replace `"BackendUrl": "<Your API address found in the Overview section in the portal.>",` to (for example) `target: "https://eu.restapi.com/mysampleapi",`
@@ -33,19 +22,9 @@ export default defineConfig({
 ## Run the sample
 
 - Open a terminal and navigate to the sample directory
-- Run `npm install`
-- Run `npm run dev`
+- Run `dotnet run --urls "https://localhost:7171"`
 
-The sample is set up to generate a locally signed certificate using mkcert so that you can run https locally.
-<br />The solution will be available at https://localhost:3000
+<br />The solution will be available at https://localhost:7171
 
 ![alt text](image-1.png)
 
-## Host the app at RestAPI.com 
-You need to change the setting VITE_URL in .env.production file to point to your Web app url. This is found in the portal at App -> Web app -> General -> Web app url.
-
-- Copy the Web app url value and replace the placeholder in the .env.production file.
-- Run `npm run build`
-- Zip the contents in the dist folder after the build is finished.
-- Go to the File explorer tab in the portal and click on Deploy zip. Then select your zip file from the previous step.
-- You should now be able to access the sample app at the web app url.
