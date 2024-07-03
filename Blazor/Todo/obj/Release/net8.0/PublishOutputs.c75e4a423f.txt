@@ -1,1 +1,0 @@
-C:\Users\Terje Woldseth\source\repos\Blazor\BlazorWebAssemblyCallWebApi\BlazorTodo\bin\Release\net8.0\publish\web.config
