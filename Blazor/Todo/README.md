@@ -22,7 +22,7 @@ In the appsettings.json in the wwwroot folder, change the BackendUrl to be your 
 ## Run the sample
 
 - Open a terminal and navigate to the sample directory
-- Run `dotnet run --urls`
+- Run `dotnet run`
 
 <br />The solution will be available at https://localhost:7171
 
