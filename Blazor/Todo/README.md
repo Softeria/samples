@@ -17,7 +17,7 @@ In the appsettings.json in the wwwroot folder, change the BackendUrl to be your 
 }
 ```
 
-- Replace `"BackendUrl": "<Your API address found in the Overview section in the portal.>",` to (for example) `target: "https://eu.restapi.com/mysampleapi",`
+- Replace `"BackendUrl": "<Your API address found in the Overview section in the portal.>",` to (for example) `"BackendUrl": "https://eu.restapi.com/mysampleapi",`
 
 ## Run the sample
 
