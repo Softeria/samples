@@ -1,0 +1,17 @@
+{
+    "collections": [
+        {
+            "properties": [
+                {
+                    "name": "title",
+                    "typeName": "string"
+                },
+                {
+                    "name": "isComplete",
+                    "typeName": "boolean"
+                }
+            ],
+            "name": "todos"
+        }
+    ]
+}

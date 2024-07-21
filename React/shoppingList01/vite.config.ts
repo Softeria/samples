@@ -9,7 +9,7 @@ export default defineConfig({
     hmr: true,
     proxy: {
       "/api": {
-        target: "<Your API address found in the Overview section in the portal.>",
+        target: "https://test.restapi.com/terje-shoppinglist",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
